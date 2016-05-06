@@ -1,0 +1,12 @@
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\LinkinBook.Infrastructure.Web.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\LinkinBook.Infrastructure.Web.pdb
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.FileSystems.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.StaticFiles.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Owin.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.xml
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.FileSystems.xml
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\bin\Debug\Microsoft.Owin.StaticFiles.xml
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\obj\Debug\LinkinBook.Infrastructure.Web.csprojResolveAssemblyReference.cache
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\obj\Debug\LinkinBook.Infrastructure.Web.dll
+C:\Repos\LinkinBook\Source\LinkinBook.Infrastructure.Web\obj\Debug\LinkinBook.Infrastructure.Web.pdb
