@@ -1,5 +1,0 @@
-C:\Repos\LinkinBook\Source\LinkinBook.Helpers\bin\Debug\LinkinBook.Helpers.dll
-C:\Repos\LinkinBook\Source\LinkinBook.Helpers\bin\Debug\LinkinBook.Helpers.pdb
-C:\Repos\LinkinBook\Source\LinkinBook.Helpers\obj\Debug\LinkinBook.Helpers.dll
-C:\Repos\LinkinBook\Source\LinkinBook.Helpers\obj\Debug\LinkinBook.Helpers.pdb
-C:\Repos\LinkinBook\Source\LinkinBook.Helpers\obj\Debug\LinkinBook.Helpers.csprojResolveAssemblyReference.cache
