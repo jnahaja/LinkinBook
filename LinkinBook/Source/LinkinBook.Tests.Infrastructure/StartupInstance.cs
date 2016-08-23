@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using LinkinBook.Infrastructure.Web;
@@ -34,14 +35,26 @@ namespace LinkinBook.Tests.Infrastructure
         /// </summary>
         public void Start()
         {
-            var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentClientDirectoryName(Directory.GetCurrentDirectory());
+            var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory());
 
             if (clientDirectoryInfo == null)
             {
                 throw new System.ArgumentException("There is a problem to get Path for Web Client");
 
             }
+            var buildDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory());
+
+            if (buildDirectoryInfo == null)
+            {
+                throw new System.ArgumentException("There is a problem to get Path for Build");
+
+            }
+
             var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
+            var buildDirectory= Path.Combine(buildDirectoryInfo, "Build");
+
+            this.GenerateIndexIfNotExists(clientDirectory, buildDirectory);
+
             var startup = new Startup(clientDirectory);
 
             this._server = WebApp.Start(this._baseAddress, appBuilder => startup.Configure(appBuilder));
@@ -52,6 +65,48 @@ namespace LinkinBook.Tests.Infrastructure
 
 
         }
+        /// <summary>
+        /// Generates an index.html if one doesn't exist.
+        /// </summary>
+        private void GenerateIndexIfNotExists(
+            string clientDirectory,
+            string buildDirectory)
+        {
+            // Exit the method if the file already exists.
+            var index = Path.Combine(clientDirectory, "index1.html");
+            if (File.Exists(index))
+            {
+                return;
+            }
+
+            // Run gulp to generate the index.html file.
+            var psi = new ProcessStartInfo("cmd.exe", "/c gulp start-build-index");
+            psi.WorkingDirectory = buildDirectory;
+            psi.RedirectStandardOutput = true;
+            psi.RedirectStandardError = true;
+            psi.UseShellExecute = false;
+
+            using (var process = Process.Start(psi))
+            using (var outputStream = process.StandardOutput)
+            using (var errorStream = process.StandardError)
+            {
+                process.WaitForExit();
+
+                // Print any output from gulp.
+                var output = outputStream.ReadToEnd();
+                Console.WriteLine(outputStream);
+
+                // Was there an error?
+                var error = errorStream.ReadToEnd();
+                if (!string.IsNullOrWhiteSpace(error))
+                {
+                    // If so, throw an exception.
+                    throw new Exception(error);
+                }
+            }
+        }
+
+
         /// <summary>
         /// GetAsync method that performs an HTTP GET request
         /// </summary>
@@ -88,4 +143,5 @@ namespace LinkinBook.Tests.Infrastructure
         }
 
     }
+
 }

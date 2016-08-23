@@ -9,7 +9,7 @@ namespace LinkinBook.Helpers
 {
     public class Helpers
     {
-        public static string GetCurrentClientDirectoryName(string currentPath)
+        public static string GetCurrentDirectoryName(string currentPath)
         {
             var directoryName = string.Empty;
             var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
