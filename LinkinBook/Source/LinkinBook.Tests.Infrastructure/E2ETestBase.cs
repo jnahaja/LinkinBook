@@ -15,7 +15,7 @@ namespace LinkinBook.Tests.Infrastructure
         [SetUp]
         public void SetUp()
         {
-            var port = 12345;
+            var port = 1234;
             this.Instance = new StartupInstance(port);
             this.Instance.Start();
         }

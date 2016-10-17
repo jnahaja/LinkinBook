@@ -9,7 +9,7 @@ namespace LinkinBook.Helpers
 {
     public class Helpers
     {
-        public static string GetCurrentDirectoryName(string currentPath)
+        public static string GetCurrentDirectoryName(string currentPath, string dirName)
         {
             var directoryName = string.Empty;
             var directory = new DirectoryInfo(currentPath ?? Directory.GetCurrentDirectory());
@@ -17,8 +17,13 @@ namespace LinkinBook.Helpers
             {
                 directory = directory.Parent;
             }
+            if (directory == null) return directoryName;
 
-            if (Directory.Exists(Path.Combine(directory.FullName, "Source")))
+            if (dirName == "build" && Directory.Exists(Path.Combine(directory.FullName, "Build")))
+            {
+                directoryName = directory.FullName;
+            }
+            if (dirName =="client" && Directory.Exists(Path.Combine(directory.FullName, "Source")))
             {
                 directoryName = Path.Combine(directory.FullName, "Source");
             }

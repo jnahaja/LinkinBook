@@ -16,7 +16,7 @@ namespace LinkinBook.Tests.Infrastructure
     public class StartupInstance : IDisposable
     {
         private IDisposable _server;
-        private string _baseAddress;
+        private readonly string _baseAddress;
         private NgWebDriver _ngDriver;
         private ChromeDriver _driver;
 
@@ -35,23 +35,24 @@ namespace LinkinBook.Tests.Infrastructure
         /// </summary>
         public void Start()
         {
-            var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory());
-
-            if (clientDirectoryInfo == null)
-            {
-                throw new System.ArgumentException("There is a problem to get Path for Web Client");
-
-            }
-            var buildDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory());
+            var buildDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "build");
 
             if (buildDirectoryInfo == null)
             {
                 throw new System.ArgumentException("There is a problem to get Path for Build");
 
             }
+            var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "client");
+
+            if (clientDirectoryInfo == null)
+            {
+                throw new System.ArgumentException("There is a problem to get Path for Web Client");
+
+            }
+
+            var buildDirectory = Path.Combine(buildDirectoryInfo, "Build");
 
             var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
-            var buildDirectory= Path.Combine(buildDirectoryInfo, "Build");
 
             this.GenerateIndexIfNotExists(clientDirectory, buildDirectory);
 
@@ -73,7 +74,7 @@ namespace LinkinBook.Tests.Infrastructure
             string buildDirectory)
         {
             // Exit the method if the file already exists.
-            var index = Path.Combine(clientDirectory, "index1.html");
+            var index = Path.Combine(clientDirectory, "index.html");
             if (File.Exists(index))
             {
                 return;

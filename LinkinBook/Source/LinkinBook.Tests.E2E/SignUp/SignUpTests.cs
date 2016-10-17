@@ -11,7 +11,7 @@ namespace LinkinBook.Tests.E2E.SignUp
 {
     public class SignUpTests : E2ETestBase
     {
-        [Test, Requirement("12345")]
+        [Test, Requirement("1234")]
         public async Task BaseAddressShouldReturnOk()
         {
             // Act

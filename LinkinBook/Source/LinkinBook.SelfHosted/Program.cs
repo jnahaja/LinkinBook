@@ -25,7 +25,7 @@ namespace LinkinBook.SelfHosted
 
             var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
 
-            var port = 12345;
+            var port = 1234;
             
             var startup = new Startup(clientDirectory);
 
@@ -47,7 +47,7 @@ namespace LinkinBook.SelfHosted
                 directory = directory.Parent;
             }
 
-            if (Directory.Exists(Path.Combine(directory.FullName,"Source"))){
+            if (directory != null && Directory.Exists(Path.Combine(directory.FullName,"Source"))){
                 directoryName = Path.Combine(directory.FullName, "Source");
             }
 
