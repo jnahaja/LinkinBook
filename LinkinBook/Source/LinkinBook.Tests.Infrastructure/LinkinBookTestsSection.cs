@@ -24,14 +24,14 @@ namespace LinkinBook.Tests.Infrastructure
 
                 //if (!Directory.Exists(result))
                 //{
-                //    throw new Exception(@"Invalid buildDirectory on App.config file <vagueBookTests /> element");
+                //    throw new Exception(@"Invalid buildDirectory on App.config file <linkinBookTests /> element");
                 //}
                 //return result;
                 var clientDirectory = (string)this["buildDirectory"];
                 var result = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, clientDirectory);
                 if (!Directory.Exists(result))
                 {
-                    throw new Exception(@"Invalid buildDirectory on App.config file <vagueBookTests /> element");
+                    throw new Exception(@"Invalid buildDirectory on App.config file <linkinBookTests /> element");
                 }
                 return result;
             }
