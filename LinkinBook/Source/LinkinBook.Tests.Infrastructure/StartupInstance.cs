@@ -35,28 +35,31 @@ namespace LinkinBook.Tests.Infrastructure
         /// </summary>
         public void Start()
         {
-            var buildDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "build");
+            //var buildDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "build");
 
-            if (buildDirectoryInfo == null)
-            {
-                throw new System.ArgumentException("There is a problem to get Path for Build");
+            //if (buildDirectoryInfo == null)
+            //{
+            //    throw new System.ArgumentException("There is a problem to get Path for Build");
 
-            }
-            var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "client");
+            //}
+            //var clientDirectoryInfo = LinkinBook.Helpers.Helpers.GetCurrentDirectoryName(Directory.GetCurrentDirectory(), "client");
 
-            if (clientDirectoryInfo == null)
-            {
-                throw new System.ArgumentException("There is a problem to get Path for Web Client");
+            //if (clientDirectoryInfo == null)
+            //{
+            //    throw new System.ArgumentException("There is a problem to get Path for Web Client");
 
-            }
+            //}
 
-            var buildDirectory = Path.Combine(buildDirectoryInfo, "Build");
+            //var buildDirectory = Path.Combine(buildDirectoryInfo, "Build");
 
-            var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
+            //var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
+            //  this.GenerateIndexIfNotExists(clientDirectory, buildDirectory);
+            var webConfig = new LinkinBookWebSectionFactory().Create();
+            var testsConfig = new LinkinBookTestsSectionFactory().Create();
+            this.GenerateIndexIfNotExists(webConfig.ClientDirectory, testsConfig.BuildDirectory);
+          
 
-            this.GenerateIndexIfNotExists(clientDirectory, buildDirectory);
-
-            var startup = new Startup(clientDirectory);
+            var startup = new Startup(webConfig.ClientDirectory);
 
             this._server = WebApp.Start(this._baseAddress, appBuilder => startup.Configure(appBuilder));
 

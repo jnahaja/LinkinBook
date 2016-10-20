@@ -14,23 +14,23 @@ namespace LinkinBook.SelfHosted
     {
         public static void Main(string[] args)
         {
+            var config = new LinkinBookWebSectionFactory().Create();
+           //var clientDirectoryInfo = GetCurrentClientDirectoryName(Directory.GetCurrentDirectory());
 
-            var clientDirectoryInfo = GetCurrentClientDirectoryName(Directory.GetCurrentDirectory());
+           // if (clientDirectoryInfo == null)
+           // {
+           //     throw new System.ArgumentException("There is a problem to get Path for Web Client");
 
-            if (clientDirectoryInfo == null)
-            {
-                throw new System.ArgumentException("There is a problem to get Path for Web Client");
+           // }
 
-            }
+           // var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
 
-            var clientDirectory = Path.Combine(clientDirectoryInfo, "Client");
-
-            var port = 1234;
+           // var port = 1234;
             
-            var startup = new Startup(clientDirectory);
+            var startup = new Startup(config.ClientDirectory);
 
             using (WebApp.Start(
-                "http://localhost:" + port,
+                "http://localhost:" + config.Port,
                 appBuilder => startup.Configure(appBuilder)))
             {
                 Console.WriteLine("Web Server is running.");
