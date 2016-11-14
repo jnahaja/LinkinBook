@@ -64,7 +64,7 @@ namespace LinkinBook.Tests.Infrastructure
             this._server = WebApp.Start(this._baseAddress, appBuilder => startup.Configure(appBuilder));
 
 
-            this._driver = new ChromeDriver(@"C:\Users\jelena.nahaja\Downloads\EXEFiles");
+            this._driver = new ChromeDriver();
             this._ngDriver = new NgWebDriver(_driver);
 
 

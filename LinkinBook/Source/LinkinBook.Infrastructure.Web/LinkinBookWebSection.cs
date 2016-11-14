@@ -10,6 +10,7 @@ namespace LinkinBook.Infrastructure.Web
 {
     public class LinkinBookWebSection : ConfigurationSection
     {
+
         [ConfigurationProperty("port", IsRequired = true)]
         public int Port
         {
