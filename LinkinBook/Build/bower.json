@@ -1,0 +1,22 @@
+{
+  "name": "linkinbook",
+  "description": "linkin book build",
+  "main": "gulpfile.js",
+  "authors": [
+    "jnahaja <jnahaja@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jnahaja/LinkinBook",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.7"
+  },
+  "devDependencies": { }
+}

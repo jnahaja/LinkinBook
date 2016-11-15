@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Client", "Source\Client\", "{336EC73B-D50E-4461-984C-E04A9ED45289}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51078"
+		Debug.AspNetCompiler.PhysicalPath = "Source\Client\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51078\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51078"
+		Release.AspNetCompiler.PhysicalPath = "Source\Client\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51078\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51078"
+		SlnRelativePath = "Source\Client\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkinBook.Infrastructure.Web", "Source\LinkinBook.Infrastructure.Web\LinkinBook.Infrastructure.Web.csproj", "{E7EAF98A-EB9E-4431-819E-61297F1D2EF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkinBook.SelfHosted", "Source\LinkinBook.SelfHosted\LinkinBook.SelfHosted.csproj", "{350004A6-9C18-4726-BB4C-7C150CE5740E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkinBook.Helpers", "Source\LinkinBook.Helpers\LinkinBook.Helpers.csproj", "{5E5C2FC0-8D88-400A-B1AE-0B7A1C3DB1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkinBook.Tests.E2E", "Source\LinkinBook.Tests.E2E\LinkinBook.Tests.E2E.csproj", "{8980510B-0E88-47BC-B052-AE6911D5B770}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkinBook.Tests.Infrastructure", "Source\LinkinBook.Tests.Infrastructure\LinkinBook.Tests.Infrastructure.csproj", "{60370280-00DC-44DE-AAEC-E8E8C4128674}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Build", "Build\Build.csproj", "{5AAD421C-D999-4B62-A498-D3AD5E55E02C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{336EC73B-D50E-4461-984C-E04A9ED45289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336EC73B-D50E-4461-984C-E04A9ED45289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336EC73B-D50E-4461-984C-E04A9ED45289}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{336EC73B-D50E-4461-984C-E04A9ED45289}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E7EAF98A-EB9E-4431-819E-61297F1D2EF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7EAF98A-EB9E-4431-819E-61297F1D2EF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7EAF98A-EB9E-4431-819E-61297F1D2EF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7EAF98A-EB9E-4431-819E-61297F1D2EF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{350004A6-9C18-4726-BB4C-7C150CE5740E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{350004A6-9C18-4726-BB4C-7C150CE5740E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{350004A6-9C18-4726-BB4C-7C150CE5740E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{350004A6-9C18-4726-BB4C-7C150CE5740E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E5C2FC0-8D88-400A-B1AE-0B7A1C3DB1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5C2FC0-8D88-400A-B1AE-0B7A1C3DB1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5C2FC0-8D88-400A-B1AE-0B7A1C3DB1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5C2FC0-8D88-400A-B1AE-0B7A1C3DB1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8980510B-0E88-47BC-B052-AE6911D5B770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8980510B-0E88-47BC-B052-AE6911D5B770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8980510B-0E88-47BC-B052-AE6911D5B770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8980510B-0E88-47BC-B052-AE6911D5B770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60370280-00DC-44DE-AAEC-E8E8C4128674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60370280-00DC-44DE-AAEC-E8E8C4128674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60370280-00DC-44DE-AAEC-E8E8C4128674}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60370280-00DC-44DE-AAEC-E8E8C4128674}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AAD421C-D999-4B62-A498-D3AD5E55E02C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5AAD421C-D999-4B62-A498-D3AD5E55E02C}.Release|Any CPU.ActiveCfg = Debug|x86
+		{5AAD421C-D999-4B62-A498-D3AD5E55E02C}.Release|Any CPU.Build.0 = Debug|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
